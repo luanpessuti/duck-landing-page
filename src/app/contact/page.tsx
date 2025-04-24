@@ -8,7 +8,7 @@ export default function ContactPage() {
       <section className="container mx-auto px-6 py-12 border-b border-gray-200">
         <h1 className="text-5xl md:text-7xl font-duck text-orange mb-6">CONTACT</h1>
         <p className="text-xl text-gray-600 max-w-2xl">
-          Let's create something remarkable together. Reach out through any channel below.
+          Let&apos;s create something remarkable together. Reach out through any channel below.
         </p>
       </section>
 
@@ -77,7 +77,7 @@ export default function ContactPage() {
           <div>
             <h2 className="text-3xl font-title text-black mb-6">Get in touch</h2>
             <p className="text-gray-600 max-w-md">
-              Whether you have a project in mind or just want to chat about design, we'd love to hear from you.
+              Whether you have a project in mind or just want to chat about design, we&apos;d love to hear from you.
             </p>
           </div>
 

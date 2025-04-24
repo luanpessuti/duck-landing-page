@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { motion } from 'framer-motion'
 
 export default function WorkPage() {
     // Dados dos projetos (pode vir de uma API/banco de dados depois)
