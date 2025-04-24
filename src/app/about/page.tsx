@@ -37,7 +37,7 @@ export default function AboutPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-[12vw] leading-none">
+          className="text-[12vw] text-orange !font-duck leading-none">
           ABOUT US
         </motion.h1>
 

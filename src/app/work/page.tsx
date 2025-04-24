@@ -8,14 +8,14 @@ export default function WorkPage() {
             title: "Project DUCK",
             category: "Branding",
             imageUrl: "work/projeto1.png",
-            link: "/work",
+            link: "https://duck-studios.vercel.app",
         },
         {
             id: 2,
-            title: "Pixel Revolution",
+            title: "COSMOS",
             category: "Web Design",
             imageUrl: "work/pixel-project.png",
-            link: "/work"
+            link: "https://cosmos.so"
         },
         // Adicione mais projetos...
     ];

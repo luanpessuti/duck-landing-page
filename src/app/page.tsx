@@ -76,9 +76,9 @@ export default function Home() {
         initial={{ opacity: 0 }}
         animate={{ opacity: isLoading ? 0 : 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="fixed inset-0" // Alterado para fixed
+        className="fixed inset-0"
       >
-        {/* Fitas - Ajuste para usar viewport units */}
+        {/* Fitas */}
         <div className="absolute top-0 left-0 w-[100vw] h-8 bg-gray text-black border-b border-black flex items-center overflow-hidden z-20">
           <div className="animate-marquee whitespace-nowrap flex">
             {[...Array(4)].map((_, i) => (
@@ -157,38 +157,38 @@ export default function Home() {
               <h2 className="text-2xl md:text-3xl">WORK</h2>
             </Link>
 
-           {/* DUCK */}
-<motion.div
-  onMouseEnter={() => setHovered("DUCK")}
-  onMouseLeave={() => setHovered(null)}
-  className="col-span-1 row-span-1 border-2 bg-gray text-orange border-black flex items-center justify-center p-4 pointer-events-auto relative overflow-hidden group"
-  whileHover={{
-    backgroundColor: "#f3ede7", // Bege claro da paleta
-    transition: { duration: 0.4 },
-  }}
->
+            {/* DUCK */}
+            <motion.div
+              onMouseEnter={() => setHovered("DUCK")}
+              onMouseLeave={() => setHovered(null)}
+              className="col-span-1 row-span-1 border-2 bg-gray text-orange border-black flex items-center justify-center p-4 pointer-events-auto relative overflow-hidden group"
+              whileHover={{
+                backgroundColor: "#f3ede7", // Bege claro da paleta
+                transition: { duration: 0.4 },
+              }}
+            >
 
 
-  {/* Glow sutil atrás do texto */}
-  <motion.div
-    className="absolute w-40 h-40 bg-orange/30 blur-2xl rounded-full z-0"
-    initial={{ opacity: 0, scale: 0.6 }}
-    animate={{
-      opacity: hovered === "DUCK" ? 1 : 0,
-      scale: hovered === "DUCK" ? 1 : 0.6,
-    }}
-    transition={{ duration: 0.5, ease: "easeInOut" }}
-  />
+              {/* Glow sutil atrás do texto */}
+              <motion.div
+                className="absolute w-40 h-40 bg-orange/30 blur-2xl rounded-full z-0"
+                initial={{ opacity: 0, scale: 0.6 }}
+                animate={{
+                  opacity: hovered === "DUCK" ? 1 : 0,
+                  scale: hovered === "DUCK" ? 1 : 0.6,
+                }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
+              />
 
-  {/* Texto DUCK com leve animação */}
-  <motion.h2
-    className="text-3xl md:text-4xl !font-duck relative z-10"
-    whileHover={{ scale: 1.1, rotate: -1 }}
-    transition={{ type: "spring", stiffness: 300 }}
-  >
-    DUCK
-  </motion.h2>
-</motion.div>
+              {/* Texto DUCK com leve animação */}
+              <motion.h2
+                className="text-3xl md:text-4xl !font-duck relative z-10"
+                whileHover={{ scale: 1.1, rotate: -1 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                DUCK
+              </motion.h2>
+            </motion.div>
 
             {/* CONTACT */}
             <Link
