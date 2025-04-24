@@ -1,26 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Cherry+Bomb+One&family=Outfit:wght@100..900&display=swap');
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Cores base com mais nuances */
+@theme {
+  --color-background: #F8F8F8;
+  --color-orange: #E89B2A;
+  --color-white: #ffffff;
+  --color-black: #1A1A1A;
+  --color-gray: #636363;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-duck: 'Cherry Bomb One', system-ui;
+  --font-title: 'Anton', sans-serif;
+  --font-body: 'Outfit', sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Transições suaves */
+:root {
+  --transition-default: all 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Reset aprimorado */
+* {
+  box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  overscroll-behavior: none;
+  overflow-x: hidden;
+  line-height: 1.6;
+  padding-bottom: 50px;
+}
+
+/* Tipografia avançada */
+h1, h2, h3, h4, h5, h6 {
+  @apply font-title;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+
+/* Scroll personalizado */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-gray-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-green);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-green-light);
+}
+
+/* Efeitos de Marquee Otimizados */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes marquee-reverse {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes marquee-vertical {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes marquee-vertical-reverse {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(0); }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+  display: flex;
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse 20s linear infinite;
+  display: flex;
+}
+
+.animate-marquee-vertical {
+  animation: marquee-vertical 25s linear infinite;
+}
+
+.animate-marquee-vertical-reverse {
+  animation: marquee-vertical-reverse 25s linear infinite;
+}
+
+.writing-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  white-space: nowrap;
+}
+
+.shape-menu {
+  position: relative;
+  overflow: hidden;
+}
+.shape-menu::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--color-green);
+  transition: left 0.4s ease;
+}
+.shape-menu:hover::before {
+  left: 0;
+}
+
+/* Garante que as formas mantenham proporção */
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-rows-3 {
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+}
+
+/* Remove espaços entre bordas */
+.border-2 {
+  border-width: 2px;
+  margin: -1px; /* Compensa a duplicação das bordas */
+}
+
+.hover-fill:hover {
+  position: relative;
+  z-index: 10;
+}
+.hover-fill:hover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--color-green);
+  z-index: -1;
+}
+
+.will-change-transform {
+  will-change: transform;
 }
