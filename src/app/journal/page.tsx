@@ -45,7 +45,7 @@ export default function JournalPage() {
                                 <span className="inline-block px-3 py-1 bg-orange/10 text-orange text-sm rounded-full mb-4">
                                     {post.tag}
                                 </span>
-                                <h2 className="text-2xl md:text-3xl font-title text-wh group-hover:text-orange transition-colors mb-3">
+                                <h2 className="text-2xl md:text-3xl font-title text-white group-hover:text-orange transition-colors mb-3">
                                     {post.title}
                                 </h2>
                                 <p className="text-white mb-4">{post.excerpt}</p>
